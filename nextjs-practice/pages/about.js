@@ -1,8 +1,9 @@
-import Navbar from '../components/Navbar';
+import Seo from '../components/Seo';
+
 export default function Next() {
   return (
     <div>
-      <Navbar />
+      <Seo title='about' />
       <h1>About</h1>
     </div>
   );
