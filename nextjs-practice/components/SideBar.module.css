@@ -8,6 +8,12 @@
   height: 60%;
   justify-content: center;
 }
+.ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 .list {
-  justify-content: center;
+  margin-top: 5px;
 }

@@ -3,7 +3,10 @@ import Styles from './SideBar.module.css';
 export default function SideBar() {
   return (
     <div className={Styles.container}>
-      <div className={Styles.list}>Login</div>
+      <ul className={Styles.ul}>
+        <li className={Styles.list}>Login</li>
+        <li className={Styles.list}>Logout</li>
+      </ul>
     </div>
   );
 }
