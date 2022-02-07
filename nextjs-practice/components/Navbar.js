@@ -1,7 +1,14 @@
+import { useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 export default function NavBar() {
   const router = useRouter();
+
+  const inputEl = useRef(null);
+  const Click = () => {
+    inputEl.current.focus();
+    console.log(inputEl);
+  };
   return (
     <nav>
       <img src='/vercel.svg' />
@@ -12,6 +19,8 @@ export default function NavBar() {
         <Link href='/about'>
           <a className={router.pathname === '/about' ? 'active' : ''}>About</a>
         </Link>
+        <input ref={inputEl} type='text'></input>
+        <button onClick={Click}>Focus the input</button>
       </div>
       <style jsx>{`
         nav {
