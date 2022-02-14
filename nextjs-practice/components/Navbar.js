@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 export default function NavBar() {
   const router = useRouter();
 
@@ -9,6 +10,16 @@ export default function NavBar() {
     inputEl.current.focus();
     console.log(inputEl);
   };
+  const getdata = async () => {
+    axios
+      .get(
+        `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/이선웅?api_key=${process.env.NEXT_PUBLIC_RIOT}`
+      )
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => {
+    getdata();
+  });
   return (
     <nav>
       <img src='/vercel.svg' />
