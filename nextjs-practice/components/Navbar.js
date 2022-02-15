@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -17,9 +17,7 @@ export default function NavBar() {
       )
       .then((res) => console.log(res.data));
   };
-  useEffect(() => {
-    getdata();
-  });
+  getdata();
   return (
     <nav>
       <img src='/vercel.svg' />
